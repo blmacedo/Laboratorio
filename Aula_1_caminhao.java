@@ -109,7 +109,7 @@ public class Aula_1_caminhao {
 			if(posicao < 9){
 				posicao = posicao + 1;
 				TANQUE = TANQUE - 1;
-				System.out.println("Você esta na posição " + posicao + " e combustivel " + TANQUE);
+				System.out.println("Posição: " + posicao + "\nCombustivel: " + TANQUE);
 			}
 		}else{
 			System.out.println("Você não pode avançar sem gasolina");
@@ -120,7 +120,7 @@ public class Aula_1_caminhao {
 			if(TANQUE>0){
 			posicao = posicao - 1;
 			TANQUE = TANQUE - 1;
-			System.out.println("Você esta na posição " + posicao + " e combustivel " + TANQUE);
+			System.out.println("Posição: " + posicao + "\nCombustivel: " + TANQUE);
 			}else{
 				System.out.println("Você não pode retroceder sem gasolina");
 			}
@@ -132,15 +132,15 @@ public class Aula_1_caminhao {
 				String aux;
 				int valor;
 				Scanner scan = new Scanner (System.in);
-				System.out.println("Você esta na posição: " + posicao + " Seu conbustivel é " + TANQUE + " quantos galões você deseja descarregar ?");
+				System.out.println("Posição: " + posicao + "\nCombustivel: " + TANQUE + "\nquantos galões você deseja descarregar ?");
 				aux = scan.nextLine();
 				valor = Integer.parseInt(aux);
 				if((valor <= TANQUE) && (valor > 0)){
 					mapa[posicao] = mapa[posicao] + valor;
 					TANQUE = TANQUE - valor;
-					System.out.println("Você esta na posição: " + posicao + " e descarregou: " + valor + " galões, Seu conbustivel é " + TANQUE);
+					System.out.println("Posição: " + posicao + "\nCombustivel: " + TANQUE + "\nDescarregou: " + valor);
 				}else{
-					System.out.println("Valor digitado invalido");	
+					System.out.println("Você tem "+ mapa[posicao] + " galões apenas na posição " + posicao);	
 				}
 			}else{
 				System.out.println("Você não tem gasolina para descarregar");	
@@ -156,7 +156,7 @@ public class Aula_1_caminhao {
 				int valor;
 				int testa_tanque;
 				Scanner scan = new Scanner (System.in);
-				System.out.println("Você tem "+ mapa[posicao] + " galões na posição "+ posicao + " Quantos galões você quer carregar?");
+				System.out.println("Você tem "+ mapa[posicao] + " galões na posição "+ posicao + "\nQuantos galões você quer carregar?");
 				aux = scan.nextLine();
 				valor = Integer.parseInt(aux);
 				testa_tanque = TANQUE + valor;
@@ -164,10 +164,10 @@ public class Aula_1_caminhao {
 					if(mapa[posicao] >= valor){
 						TANQUE = TANQUE + valor;
 						mapa[posicao] = mapa[posicao] - valor;
-						System.out.println("Você esta na posição: " + posicao + " Seu conbustivel é " + TANQUE );
+						System.out.println("Posição: " + posicao + "\nCombustivel: " + TANQUE );
 						testa_tanque = 0;
 					}else{
-						System.out.println("Você tem "+ mapa[posicao] + " galões apenas na posição" + posicao);
+						System.out.println("Você tem "+ mapa[posicao] + " galões apenas na posição " + posicao);
 						testa_tanque = 0;
 					}
 				}else{
@@ -179,7 +179,7 @@ public class Aula_1_caminhao {
 			}
 		}else{
 			TANQUE = 6;
-			System.out.println("Você esta na posição " + posicao + " e combustivel " + TANQUE);
+			System.out.println("Posição: " + posicao + "\nCombustivel: " + TANQUE);
 		}
 	}
 }
