@@ -89,14 +89,14 @@ public class Aula_1_caminhao {
 		  Scanner scan = new Scanner (System.in);  
 		  if(posicao != 0){
 			  if(mapa[posicao]>0){
-				  System.out.print ("O que deseja fazer ? [Avançar] [Recuar] [Descarregar] [Carregar] \n");  
+				  System.out.print ("O que deseja fazer ? [Avancar] [Recuar] [Descarregar] [Carregar] \n");  
 			      opcao = scan.nextLine();
 			  }else{
-				  System.out.print ("O que deseja fazer ? [Avançar] [Recuar] [Descarregar] \n");  
+				  System.out.print ("O que deseja fazer ? [Avancar] [Recuar] [Descarregar] \n");  
 			        opcao = scan.nextLine();
 			  }
 		  }else{
-			  System.out.print ("O que deseja fazer ? [Avançar] [Carregar] \n");  
+			  System.out.print ("O que deseja fazer ? [Avancar] [Carregar] \n");  
 		      opcao = scan.nextLine();
 		  }   
 		  this.opcao=opcao.toUpperCase(); 	 
@@ -111,15 +111,19 @@ public class Aula_1_caminhao {
 				TANQUE = TANQUE - 1;
 				System.out.println("Você esta na posição " + posicao + " e combustivel " + TANQUE);
 			}
+		}else{
+			System.out.println("Você não pode avançar sem gasolina");
 		}
 	}
 	private void RECUAR() {
 		if(posicao > 0){
+			if(TANQUE>0){
 			posicao = posicao - 1;
 			TANQUE = TANQUE - 1;
 			System.out.println("Você esta na posição " + posicao + " e combustivel " + TANQUE);
-		}else{
-			System.out.println("Você não pode retroceder a posição: " + posicao);
+			}else{
+				System.out.println("Você não pode retroceder sem gasolina");
+			}
 		}
 	}
 	private void DESCARREGAR() {
