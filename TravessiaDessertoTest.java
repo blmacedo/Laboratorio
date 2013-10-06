@@ -197,7 +197,7 @@ public class TravessiaDesertoTest {
 			auth.carregar();
 			fuel++;
 		}
-		//assertEquals("Verifica se conbustivel não passa da capacidade do caminhão",6 ,auth.getFuel(), 0);
+		assertEquals("Verifica se conbustivel não passa da capacidade do caminhão",6 ,auth.getFuel(), 0);
 			
 		while(auth.getFuel() > 1){
 			auth.descarregar();
